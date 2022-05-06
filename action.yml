@@ -8,7 +8,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: curl -LJ0 https://github.com/rancher-sandbox/elemental/releases/download/v0.0.14/elemental-v0.0.14-Linux-x86_64.tar.gz
+    - run: curl -LO https://github.com/rancher-sandbox/elemental/releases/download/v0.0.14/elemental-v0.0.14-Linux-x86_64.tar.gz
       shell: bash
     - run: ls
       shell: bash
