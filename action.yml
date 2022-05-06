@@ -8,13 +8,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: curl -LO https://github.com/rancher-sandbox/elemental/releases/download/v0.0.14/elemental-v0.0.14-Linux-x86_64.tar.gz
+    - run: |
+	curl -LO https://github.com/rancher-sandbox/elemental/releases/download/${{ inputs.version }}/elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
+	tar -xvf elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
+	chmod +x elemental
+	sudo cp elemental /usr/bin/elemental
       shell: bash
-    - run: ls
-      shell: bash
-    - run: tar -xvf elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
-      shell: bash
-    - run: chmod +x elemental
-      shell: bash
-    - run: sudo cp elemental /usr/bin/elemental
-      shell: bash
+
