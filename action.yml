@@ -1,4 +1,4 @@
-name: 'Elemental action''
+name: 'Elemental action'
 description: 'Use elemental to build derivatives'
 inputs:
   version:
