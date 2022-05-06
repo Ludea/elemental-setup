@@ -1,0 +1,16 @@
+name: 'Elemental action''
+description: 'Use elemental to build derivatives'
+inputs:
+  version:
+    description: 'Setup elemental'
+    required: false
+    default: 0.0.14
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        curl -L0 https://github.com/rancher-sandbox/elemental/releases/download/v${{ inputs.version}}/elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
+        tar -xvf elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
+        chmod +x elemental
+        sudo cp elemental /usr/bin/elemental
+      shell: bash
