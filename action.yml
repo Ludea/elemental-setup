@@ -14,3 +14,4 @@ runs:
         tar -xvf elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
         chmod +x elemental
         sudo cp elemental /usr/bin/elemental
+      shell: bash
