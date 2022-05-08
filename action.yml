@@ -8,10 +8,13 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
     - run: |
-        curl -LO https://github.com/rancher-sandbox/elemental/releases/download/v${{ inputs.version }}/elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
-        tar -xvf elemental-v${{ inputs.version }}-Linux-x86_64.tar.gz
-        chmod +x elemental
+        git clone https://github.com/rancher-sandbox/elemental
+        make build 
+        ls
+        chmod +x elemental 
         sudo cp elemental /usr/bin/elemental
       shell: bash
 
