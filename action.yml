@@ -12,9 +12,10 @@ runs:
       uses: actions/setup-go@v2
     - run: |
         git clone https://github.com/rancher-sandbox/elemental
+        cd elemental
         make build 
         ls
-        chmod +x elemental 
-        sudo cp elemental /usr/bin/elemental
+        chmod +x bin/elemental 
+        sudo cp bin/elemental /usr/bin/elemental
       shell: bash
 
