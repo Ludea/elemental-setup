@@ -11,7 +11,7 @@ runs:
     - name: Install Go
       uses: actions/setup-go@v2
     - run: |
-        apt install -y mtools
+        sudo apt install -y mtools
         git clone https://github.com/rancher-sandbox/elemental
         cd elemental
         make build 
